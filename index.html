@@ -5,32 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌍 Country Information Finder</title>
 
-    <!-- Link external CSS -->
+    <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <div class="title">🌍 Country Information Finder</div>
 
-    <input type="text" id="countryInput" placeholder="Enter a country name..." list="countriesList">
+<div class="container">
+    <h1 class="title">🌍 Country Information Finder</h1>
+
+    <input
+        type="text"
+        id="countryInput"
+        placeholder="Enter a country name..."
+        list="countriesList"
+    >
+
     <datalist id="countriesList">
         <option value="Kenya">
         <option value="South Sudan">
-        <option value="USA">
+        <option value="United States">
         <option value="Canada">
         <option value="India">
         <option value="France">
         <option value="Germany">
-        <!-- Add more countries as needed -->
+        <option value="Uganda">
+        <option value="Ethiopia">
+        <option value="Tanzania">
     </datalist>
 
-    <button onclick="searchCountry()">Search</button>
-    <button onclick="toggleDark()">Toggle Dark Mode</button>
+    <button id="searchBtn">Search</button>
+    <button id="darkBtn">Toggle Dark Mode</button>
 
     <div id="result"></div>
 </div>
 
-<!-- Link external JS -->
-<script src="script.js" defer></script>
+<!-- External JavaScript -->
+<script src="script.js"></script>
+
 </body>
 </html>

@@ -118,10 +118,7 @@
     "president": "Ismaïl Omar Guelleh",
     "flag": "https://flagcdn.com/w320/dj.png",
     "coatOfArms": "https://mainfacts.com/media/images/coats_of_arms/dj.png"
-  }
-]
-
-[
+  },
   {
     "name": "Democratic Republic of the Congo",
     "continent": "Africa",
@@ -366,7 +363,6 @@
     "coatOfArms": "https://mainfacts.com/media/images/coats_of_arms/ci.png"
   }
 ]
-
 ,
 {
   "name": "Egypt",

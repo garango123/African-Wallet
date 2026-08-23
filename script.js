@@ -18,11 +18,9 @@ document.getElementById("darkBtn")
 
 document.getElementById("countryInput")
 .addEventListener("keypress", function(e) {
-
     if (e.key === "Enter") {
         searchCountry();
     }
-
 });
 
 
@@ -40,10 +38,8 @@ async function searchCountry() {
 
 
     if (!country) {
-
         result.innerHTML =
         "<p style='color:red;'>Please enter a country name.</p>";
-
         return;
     }
 
@@ -54,7 +50,7 @@ async function searchCountry() {
     try {
 
         const response = await fetch(
-            `https://api.restcountries.com/countries/v5?query=${encodeURIComponent(country)}`,
+            `https://api.restcountries.com/countries/v5/name?q=${encodeURIComponent(country)}`,
             {
                 headers: {
                     "Authorization": "Bearer rc_live_demo"
@@ -64,9 +60,7 @@ async function searchCountry() {
 
 
         if (!response.ok) {
-
             throw new Error("Country not found");
-
         }
 
 
@@ -76,91 +70,52 @@ async function searchCountry() {
         const c = data.data.objects[0];
 
 
-        const name =
-        c.names?.common || "N/A";
+        const name = c.names?.common || "N/A";
+        const official = c.names?.official || "N/A";
+        const capital = c.capitals?.[0] || "N/A";
+
+        const population = c.population
+            ? c.population.toLocaleString()
+            : "N/A";
+
+        const region = c.region || "N/A";
 
 
-        const official =
-        c.names?.official || "N/A";
+        const languages = c.languages
+            ? Object.values(c.languages).join(", ")
+            : "N/A";
 
 
-        const capital =
-        c.capitals?.[0] || "N/A";
+        const currency = c.currencies?.[0]?.name || "N/A";
 
 
-        const population =
-        c.population?.toLocaleString() || "N/A";
-
-
-        const region =
-        c.region || "N/A";
-
-
-        const languages =
-        c.languages
-        ? Object.values(c.languages).join(", ")
-        : "N/A";
-
-
-        const currency =
-        c.currencies?.[0]?.name || "N/A";
-
-
-        const flag =
-        c.flags?.png || c.flags?.svg || "";
+        const flag = c.flag?.png || "";
 
 
         result.innerHTML = `
 
         <h2>${name}</h2>
 
-        <img src="${flag}"
-        width="200"
-        alt="${name} flag">
+        <img src="${flag}" 
+             width="200"
+             alt="${name} Flag">
 
+        <p><strong>Official Name:</strong> ${official}</p>
 
-        <p>
-        <strong>Official Name:</strong>
-        ${official}
-        </p>
+        <p><strong>Capital:</strong> ${capital}</p>
 
+        <p><strong>Population:</strong> ${population}</p>
 
-        <p>
-        <strong>Capital:</strong>
-        ${capital}
-        </p>
+        <p><strong>Region:</strong> ${region}</p>
 
+        <p><strong>Currency:</strong> ${currency}</p>
 
-        <p>
-        <strong>Population:</strong>
-        ${population}
-        </p>
-
-
-        <p>
-        <strong>Region:</strong>
-        ${region}
-        </p>
-
-
-        <p>
-        <strong>Currency:</strong>
-        ${currency}
-        </p>
-
-
-        <p>
-        <strong>Languages:</strong>
-        ${languages}
-        </p>
+        <p><strong>Languages:</strong> ${languages}</p>
 
         `;
 
 
-    }
-
-
-    catch(error) {
+    } catch(error) {
 
         result.innerHTML =
         `<p style="color:red;">
@@ -168,5 +123,4 @@ async function searchCountry() {
         </p>`;
 
     }
-
 }

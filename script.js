@@ -1,14 +1,10 @@
-// ===============================
 // Toggle Dark Mode
-// ===============================
 function toggleDark() {
     document.body.classList.toggle("dark-mode");
 }
 
 
-// ===============================
-// Event Listeners
-// ===============================
+// Buttons
 document.getElementById("searchBtn")
 .addEventListener("click", searchCountry);
 
@@ -17,86 +13,86 @@ document.getElementById("darkBtn")
 
 
 document.getElementById("countryInput")
-.addEventListener("keypress", function(e) {
-    if (e.key === "Enter") {
+.addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
         searchCountry();
     }
 });
 
 
-// ===============================
 // Search Country
-// ===============================
-async function searchCountry() {
+async function searchCountry(){
 
-    const country = document
-        .getElementById("countryInput")
-        .value.trim();
+    const countryInput = document
+    .getElementById("countryInput")
+    .value
+    .trim();
+
 
     const result = document.getElementById("result");
 
 
-    if (!country) {
+    if(!countryInput){
         result.innerHTML =
-        "<p style='color:red;'>Please enter a country name.</p>";
+        "<p style='color:red'>Enter country name</p>";
         return;
     }
 
 
-    result.innerHTML = "<p>Loading...</p>";
+    result.innerHTML = "Loading...";
 
 
     try {
 
-        const response = await fetch(
-            "https://countriesnow.space/api/v0.1/countries/population"
+        const response = await fetch("countries.json");
+
+
+        const countries = await response.json();
+
+
+        const country = countries.find(
+            c => c.name.toLowerCase() === countryInput.toLowerCase()
         );
 
 
-        const data = await response.json();
-
-
-        const countryData = data.data.find(
-            item => item.country.toLowerCase() === country.toLowerCase()
-        );
-
-
-        if (!countryData) {
+        if(!country){
             throw new Error("Country not found");
         }
 
 
-        const name = countryData.country;
-
-        const population =
-            countryData.populationCounts[
-                countryData.populationCounts.length - 1
-            ].value.toLocaleString();
-
-
-
         result.innerHTML = `
 
-        <h2>${name}</h2>
+        <h2>${country.name}</h2>
 
-        <p>
-        <strong>Population:</strong>
-        ${population}
-        </p>
+        <img src="${country.flag}" width="200">
 
-        <p>
-        Country information loaded successfully.
-        </p>
+
+        <p><b>Continent:</b> ${country.continent}</p>
+
+        <p><b>Region:</b> ${country.region}</p>
+
+        <p><b>Hemisphere:</b> ${country.hemisphere}</p>
+
+        <p><b>Currency:</b> ${country.currency}</p>
+
+        <p><b>Languages:</b> ${country.languages}</p>
+
+        <p><b>Population:</b> ${country.population}</p>
+
+        <p><b>Current President:</b> ${country.president}</p>
+
+
+        <h3>Coat of Arms</h3>
+
+        <img src="${country.coatOfArms}" width="150">
 
         `;
 
 
-    } catch(error) {
+    } catch(error){
 
         result.innerHTML =
-        `<p style="color:red;">
-        ${error.message}
-        </p>`;
+        `<p style="color:red">${error.message}</p>`;
 
     }
 

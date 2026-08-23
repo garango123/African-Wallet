@@ -238,10 +238,7 @@
     "president": "Cyril Ramaphosa",
     "flag": "https://flagcdn.com/w320/za.png",
     "coatOfArms": "https://mainfacts.com/media/images/coats_of_arms/za.png"
-  }
-]
-
-[
+  },
   {
     "name": "Nigeria",
     "continent": "Africa",
@@ -361,9 +358,7 @@
     "president": "Alassane Ouattara",
     "flag": "https://flagcdn.com/w320/ci.png",
     "coatOfArms": "https://mainfacts.com/media/images/coats_of_arms/ci.png"
-  }
-]
-,
+  },
 {
   "name": "Egypt",
   "continent": "Africa",
@@ -652,4 +647,4 @@
   "flag": "https://flagcdn.com/w320/td.png",
   "coatOfArms": "https://mainfacts.com/media/images/coats_of_arms/td.png"
 }
-
+]

@@ -9,117 +9,164 @@ function toggleDark() {
 // ===============================
 // Event Listeners
 // ===============================
-document.getElementById("searchBtn").addEventListener("click", searchCountry);
+document.getElementById("searchBtn")
+.addEventListener("click", searchCountry);
 
-document.getElementById("darkBtn").addEventListener("click", toggleDark);
+document.getElementById("darkBtn")
+.addEventListener("click", toggleDark);
 
-document.getElementById("countryInput").addEventListener("keypress", function (e) {
+
+document.getElementById("countryInput")
+.addEventListener("keypress", function(e) {
+
     if (e.key === "Enter") {
         searchCountry();
     }
+
 });
 
 
 // ===============================
-// Search Country
+// Search Country (REST Countries v5)
 // ===============================
 async function searchCountry() {
 
-    const country = document.getElementById("countryInput").value.trim();
+    const country = document
+        .getElementById("countryInput")
+        .value
+        .trim();
+
     const result = document.getElementById("result");
 
+
     if (!country) {
-        result.innerHTML = "<p style='color:red;'>Please enter a country name.</p>";
+
+        result.innerHTML =
+        "<p style='color:red;'>Please enter a country name.</p>";
+
         return;
     }
 
+
     result.innerHTML = "<p>Loading...</p>";
+
 
     try {
 
         const response = await fetch(
-            `https://restcountries.com/v3.1/name/${encodeURIComponent(country)}`
+            `https://api.restcountries.com/countries/v5?query=${encodeURIComponent(country)}`,
+            {
+                headers: {
+                    "Authorization": "Bearer rc_live_demo"
+                }
+            }
         );
 
+
         if (!response.ok) {
+
             throw new Error("Country not found");
+
         }
+
 
         const data = await response.json();
 
-        const c = data[0];
 
-        const name = c.name?.common || "N/A";
-        const official = c.name?.official || "N/A";
-        const capital = c.capital?.[0] || "N/A";
-
-        const population = c.population
-            ? c.population.toLocaleString()
-            : "N/A";
-
-        const region = c.region || "N/A";
-        const subregion = c.subregion || "N/A";
+        const c = data.data.objects[0];
 
 
-        const currency = c.currencies
-            ? Object.values(c.currencies)
-                .map(item => `${item.name} (${item.symbol || ""})`)
-                .join(", ")
-            : "N/A";
+        const name =
+        c.names?.common || "N/A";
 
 
-        const languages = c.languages
-            ? Object.values(c.languages).join(", ")
-            : "N/A";
+        const official =
+        c.names?.official || "N/A";
 
 
-        const flag = c.flags?.png || "";
+        const capital =
+        c.capitals?.[0] || "N/A";
 
-        const coat = c.coatOfArms?.png || "";
+
+        const population =
+        c.population?.toLocaleString() || "N/A";
+
+
+        const region =
+        c.region || "N/A";
+
+
+        const languages =
+        c.languages
+        ? Object.values(c.languages).join(", ")
+        : "N/A";
+
+
+        const currency =
+        c.currencies?.[0]?.name || "N/A";
+
+
+        const flag =
+        c.flags?.png || c.flags?.svg || "";
 
 
         result.innerHTML = `
 
-            <h2>${name}</h2>
+        <h2>${name}</h2>
 
-            <img src="${flag}" 
-                 alt="${name} Flag" 
-                 width="200">
-
-
-            <p><strong>Official Name:</strong> ${official}</p>
-
-            <p><strong>Capital:</strong> ${capital}</p>
-
-            <p><strong>Population:</strong> ${population}</p>
-
-            <p><strong>Region:</strong> ${region}</p>
-
-            <p><strong>Subregion:</strong> ${subregion}</p>
-
-            <p><strong>Currency:</strong> ${currency}</p>
-
-            <p><strong>Languages:</strong> ${languages}</p>
+        <img src="${flag}"
+        width="200"
+        alt="${name} flag">
 
 
-            ${
-                coat 
-                ? `<img src="${coat}" 
-                    alt="${name} Coat of Arms" 
-                    width="150">`
-                : ""
-            }
+        <p>
+        <strong>Official Name:</strong>
+        ${official}
+        </p>
+
+
+        <p>
+        <strong>Capital:</strong>
+        ${capital}
+        </p>
+
+
+        <p>
+        <strong>Population:</strong>
+        ${population}
+        </p>
+
+
+        <p>
+        <strong>Region:</strong>
+        ${region}
+        </p>
+
+
+        <p>
+        <strong>Currency:</strong>
+        ${currency}
+        </p>
+
+
+        <p>
+        <strong>Languages:</strong>
+        ${languages}
+        </p>
 
         `;
 
-
-    } catch (error) {
-
-        result.innerHTML = `
-            <p style="color:red;">
-                ${error.message}
-            </p>
-        `;
 
     }
+
+
+    catch(error) {
+
+        result.innerHTML =
+        `<p style="color:red;">
+        ${error.message}
+        </p>`;
+
+    }
+
 }

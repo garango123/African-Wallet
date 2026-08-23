@@ -1,0 +1,26 @@
+[
+  {
+    "name": "South Sudan",
+    "continent": "Africa",
+    "region": "East Africa",
+    "hemisphere": "Northern & Southern",
+    "currency": "South Sudanese Pound (SSP)",
+    "languages": "English, Dinka, Nuer, Arabic",
+    "population": "11,000,000",
+    "president": "Salva Kiir Mayardit",
+    "flag": "https://flagcdn.com/w320/ss.png",
+    "coatOfArms": "https://mainfacts.com/media/images/coats_of_arms/ss.png"
+  },
+  {
+    "name": "Kenya",
+    "continent": "Africa",
+    "region": "East Africa",
+    "hemisphere": "Northern & Southern",
+    "currency": "Kenyan Shilling (KES)",
+    "languages": "English, Swahili",
+    "population": "55,000,000",
+    "president": "William Ruto",
+    "flag": "https://flagcdn.com/w320/ke.png",
+    "coatOfArms": "https://mainfacts.com/media/images/coats_of_arms/ke.png"
+  }
+]

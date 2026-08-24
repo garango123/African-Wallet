@@ -1,6 +1,7 @@
 [
   {
     "name": "South Sudan",
+    "capital": "Juba",
     "continent": "Africa",
     "region": "East Africa",
     "hemisphere": "Northern & Southern",
@@ -13,6 +14,7 @@
   },
   {
     "name": "Kenya",
+    "capital": "Nairobi",
     "continent": "Africa",
     "region": "East Africa",
     "hemisphere": "Northern & Southern",
@@ -25,6 +27,7 @@
   },
   {
     "name": "Uganda",
+    "capital": "Kampala",
     "continent": "Africa",
     "region": "East Africa",
     "hemisphere": "Northern & Southern",
@@ -37,6 +40,7 @@
   },
   {
     "name": "Tanzania",
+    "capital": "Dodoma",
     "continent": "Africa",
     "region": "East Africa",
     "hemisphere": "Northern & Southern",
@@ -49,6 +53,7 @@
   },
   {
     "name": "Rwanda",
+    "capital": "Kigali",
     "continent": "Africa",
     "region": "East Africa",
     "hemisphere": "Southern",
@@ -61,6 +66,7 @@
   },
   {
     "name": "Burundi",
+    "capital": "Gitega",
     "continent": "Africa",
     "region": "East Africa",
     "hemisphere": "Southern",
@@ -73,6 +79,7 @@
   },
   {
     "name": "Ethiopia",
+    "capital": "Addis Ababa",
     "continent": "Africa",
     "region": "East Africa",
     "hemisphere": "Northern",
@@ -85,6 +92,7 @@
   },
   {
     "name": "Sudan",
+    "capital": "Khartoum",
     "continent": "Africa",
     "region": "North-East Africa",
     "hemisphere": "Northern",
@@ -97,6 +105,7 @@
   },
   {
     "name": "Somalia",
+    "capital": "Mogadishu",
     "continent": "Africa",
     "region": "East Africa",
     "hemisphere": "Northern & Southern",
@@ -109,6 +118,7 @@
   },
   {
     "name": "Djibouti",
+    "capital": "Djibouti",
     "continent": "Africa",
     "region": "Horn of Africa",
     "hemisphere": "Northern",

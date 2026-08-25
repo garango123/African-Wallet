@@ -1,57 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌍 Country Information Finder</title>
 
-    <!-- External CSS -->
+    <title>🌍 African Wallet</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
+
 <body>
-    
+
+
+<!-- Welcome Screen -->
 <section class="welcome">
-  <h1>Welcome to Africa 🌍</h1>
-  <p>
-    Explore detailed information about all 54 African countries,
-    including capitals, flags, presidents, currencies, languages,
-    population, economy, literacy rates, and major ethnic groups.
-  </p>
 
-  <button onclick="startExploring()">Explore Africa</button>
+    <h1>Welcome to Africa 🌍</h1>
+
+    <p>
+        Explore detailed information about all 54 African countries,
+        including capitals, flags, presidents, currencies, languages,
+        population, economy, literacy rates, and major ethnic groups.
+    </p>
+
+    <button onclick="startExploring()">
+        Explore Africa
+    </button>
+
 </section>
-<div class="container">
-    <h1 class="title">🌍 Country Information Finder</h1>
 
-    <input
+
+
+<!-- Main App Section -->
+<div class="country-container" style="display:none;">
+
+
+    <h1 class="title">
+        🌍 African Wallet
+    </h1>
+
+
+    <input 
         type="text"
         id="countryInput"
-        placeholder="Enter a country name..."
+        placeholder="Enter an African country name..."
         list="countriesList"
     >
 
+
+
+    <!-- Country Suggestions -->
     <datalist id="countriesList">
-        <option value="Kenya">
+
         <option value="South Sudan">
-        <option value="United States">
-        <option value="Canada">
-        <option value="India">
-        <option value="France">
-        <option value="Germany">
+        <option value="Kenya">
         <option value="Uganda">
-        <option value="Ethiopia">
         <option value="Tanzania">
+        <option value="Ethiopia">
+        <option value="Somalia">
+        <option value="Nigeria">
+        <option value="Ghana">
+        <option value="Egypt">
+        <option value="South Africa">
+        <option value="Democratic Republic of the Congo">
+        <option value="Republic of the Congo">
+
     </datalist>
 
-    <button id="searchBtn">Search</button>
-    <button id="darkBtn">Toggle Dark Mode</button>
 
+
+    <button id="searchBtn">
+        Search
+    </button>
+
+
+    <button id="darkBtn">
+        Toggle Dark Mode
+    </button>
+
+
+
+    <!-- Country Results Appear Here -->
     <div id="result"></div>
+
+
 </div>
 
-<!-- External JavaScript -->
+
+
+
 <script src="script.js"></script>
-</body>
+
 
 </body>
+
 </html>

@@ -21,13 +21,20 @@ document.getElementById("countryInput")
 
 
 // Search Country
-async function searchCountry(){
 
-    const countryInput = document
-    .getElementById("countryInput")
-    .value
-    .trim();
+function searchCountry() {
+  const countryName = input.value.trim();
 
+  const selectedCountry = countries.find(c =>
+    c.name.toLowerCase() === countryName.toLowerCase()
+  );
+
+  if (selectedCountry) {
+    displayCountry(selectedCountry);
+  } else {
+    result.innerHTML = "Country not found";
+  }
+}
 
     const result = document.getElementById("result");
 

@@ -527,6 +527,23 @@
   "flag": "https://flagcdn.com/w320/er.png",
   "coatOfArms": "https://mainfacts.com/media/images/coats_of_arms/er.png"
 },
+
+{
+  "name": "Kenya",
+  "capital": "Nairobi",
+  "continent": "Africa",
+  "region": "East Africa",
+  "hemisphere": "Northern & Southern",
+  "currency": "Kenyan Shilling (KES)",
+  "languages": "English, Swahili",
+  "population": "55,000,000",
+  "president": "William Ruto",
+  "literacyRate": "82%",
+  "economy": "Agriculture, tourism, technology, manufacturing, financial services",
+  "majorEthnicGroups": "Kikuyu, Luhya, Kalenjin, Luo, Kamba, Somali",
+  "flag": "https://flagcdn.com/w320/ke.png",
+  "coatOfArms": "https://mainfacts.com/media/images/coats_of_arms/ke.png"
+},  
 {
   "name": "Ethiopia",
   "capital": "Addis Ababa",
@@ -542,6 +559,38 @@
   "majorEthnicGroups": "Oromo, Amhara, Somali, Tigray, Sidama",
   "flag": "https://flagcdn.com/w320/et.png",
   "coatOfArms": "https://mainfacts.com/media/images/coats_of_arms/et.png"
+},
+{
+  "name": "Democratic Republic of the Congo",
+  "capital": "Kinshasa",
+  "continent": "Africa",
+  "region": "Central Africa",
+  "hemisphere": "Northern & Southern",
+  "currency": "Congolese Franc (CDF)",
+  "languages": "French, Lingala, Swahili, Kikongo, Tshiluba",
+  "population": "110,000,000",
+  "president": "Félix Tshisekedi",
+  "literacyRate": "80%",
+  "economy": "Mining (cobalt, copper), agriculture, forestry, energy",
+  "majorEthnicGroups": "Luba, Kongo, Mongo, Lunda, Hutu, Tutsi",
+  "flag": "https://flagcdn.com/w320/cd.png",
+  "coatOfArms": "https://mainfacts.com/media/images/coats_of_arms/cd.png"
+},
+  {
+  "name": "Republic of the Congo",
+  "capital": "Brazzaville",
+  "continent": "Africa",
+  "region": "Central Africa",
+  "hemisphere": "Southern",
+  "currency": "Central African CFA Franc (XAF)",
+  "languages": "French, Lingala, Kituba",
+  "population": "6,300,000",
+  "president": "Denis Sassou Nguesso",
+  "literacyRate": "80%",
+  "economy": "Oil, forestry, mining, agriculture",
+  "majorEthnicGroups": "Kongo, Teke, Mbochi, Sangha",
+  "flag": "https://flagcdn.com/w320/cg.png",
+  "coatOfArms": "https://mainfacts.com/media/images/coats_of_arms/cg.png"
 },
 {
   "name": "Madagascar",

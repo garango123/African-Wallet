@@ -51,7 +51,7 @@ async function searchCountry(){
 
 
         const country = countries.find(
-            c => c.name.toLowerCase() === countryInput.toLowerCase()
+            country.name.trim().toLowerCase() === searchValue.trim().toLowerCase()
         );
 
 

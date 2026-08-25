@@ -97,3 +97,8 @@ async function searchCountry(){
     }
 
 }
+
+function startExploring() {
+  document.querySelector(".welcome").style.display = "none";
+  document.querySelector(".country-container").style.display = "block";
+}
